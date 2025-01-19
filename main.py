@@ -1,6 +1,7 @@
 import os
 import sys
 import shutil
+import errno
 import json
 import hashlib
 import time
@@ -14,6 +15,7 @@ EXTRACT_ASSETS_PATH = "D:\\BotProject\\MSBotUpdate\\assets"
 EXTRACT_ASSETS_MD5_PATH = "D:\\BotProject\\MSBotUpdate\\assets\\assets.md5"
 EXTRACT_M_COLOR_PATH = "D:\\BotProject\\MonsterStrikeBot\\脚本\\M_COLOR.lua"
 EMULATOR_ASSETS_PATH = "/sdcard/assets"
+EMULATOR_DEBUG_PATH = "D:\\Users\\Cola\\Documents\\XuanZhi64\\Pictures\\assets"
 
 M_COLOR = {}
 FILE_MD5 = {}
@@ -232,6 +234,16 @@ def create_data_extract_file_MD5():
     f.close()
 
 
+def copy_everything_to_emulator():
+    try:
+        shutil.copytree(EXTRACT_ASSETS_PATH, EMULATOR_DEBUG_PATH)
+    except OSError as exc:
+        if exc.errno in (errno.ENOTDIR, errno.EINVAL):
+            shutil.copy(EXTRACT_ASSETS_PATH, EMULATOR_DEBUG_PATH)
+        else:
+            raise
+
+
 t0 = time.time()
 
 if os.path.exists(EXTRACT_ASSETS_PATH):
@@ -244,10 +256,13 @@ complete_image(APP_SERVER[1])
 # 开始crop、copy、create data
 create_data_M_COLOR()
 
-# 输出 M_COLOR.md5到指定路径
+# 输出M_COLOR.md5到指定路径
 output_M_COLOR_md5()
 
-# 输出 assets.md5到指定路径
+# 输出assets.md5到指定路径
 create_data_extract_file_MD5()
+
+# 复制一份assets到debug
+copy_everything_to_emulator()
 
 print(f'Total time use : {time.time()-t0} seconds')
