@@ -207,7 +207,7 @@ def output_M_COLOR_md5():
     f.write("M_COLOR = {}\n")
     for key, v in M_COLOR.items():
         result = turn_into_color_format(M_COLOR[key])
-        f.write("M_COLOR.%s\n" % result)
+        f.write("%s\n" % result)
 
     f.close()
 
