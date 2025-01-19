@@ -12,7 +12,7 @@ APP_SERVER = ["jp", "tw"]
 IMAGE_RES_PATH = "D:\\BotProject\\MonsterStrikeBot\\resource"
 EXTRACT_ASSETS_PATH = "D:\\BotProject\\MSBotUpdate\\assets"
 EXTRACT_ASSETS_MD5_PATH = "D:\\BotProject\\MSBotUpdate\\assets\\assets.md5"
-EXTRACT_M_COLOR_PATH = "D:\\BotProject\\MonsterStrikeBot\\auto\\脚本\\M_COLOR.lua"
+EXTRACT_M_COLOR_PATH = "D:\\BotProject\\MonsterStrikeBot\\脚本\\M_COLOR.lua"
 EMULATOR_ASSETS_PATH = "/sdcard/assets"
 
 M_COLOR = {}
