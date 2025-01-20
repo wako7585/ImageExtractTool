@@ -10,12 +10,16 @@ import cv2
 import numpy as np
 
 APP_SERVER = ["jp", "tw"]
+
+# 改成自己专案路径
+# =============================================================================
 IMAGE_RES_PATH = "D:\\BotProject\\MonsterStrikeBot\\resource"
 EXTRACT_ASSETS_PATH = "D:\\BotProject\\MSBotUpdate\\assets"
 EXTRACT_ASSETS_MD5_PATH = "D:\\BotProject\\MSBotUpdate\\assets\\assets.md5"
 EXTRACT_M_COLOR_PATH = "D:\\BotProject\\MonsterStrikeBot\\脚本\\M_COLOR.lua"
 EMULATOR_ASSETS_PATH = "/sdcard/assets"
 EMULATOR_DEBUG_PATH = "D:\\Users\\Cola\\Documents\\XuanZhi64\\Pictures\\assets"
+# =============================================================================
 
 M_COLOR = {}
 FILE_MD5 = {}
@@ -235,6 +239,9 @@ def create_data_extract_file_MD5():
 
 
 def copy_everything_to_emulator():
+    if os.path.exists(EMULATOR_DEBUG_PATH):
+        shutil.rmtree(EMULATOR_DEBUG_PATH)
+
     try:
         shutil.copytree(EXTRACT_ASSETS_PATH, EMULATOR_DEBUG_PATH)
     except OSError as exc:
