@@ -14,9 +14,9 @@ APP_SERVER = ["jp", "tw"]
 # 改成自己专案路径
 # =============================================================================
 IMAGE_RES_PATH = "D:\\AutoBotProject\\MonsterStrikeBot\\resource"
+EXTRACT_M_COLOR_PATH = "D:\\AutoBotProject\\MonsterStrikeBot\\脚本\\M_COLOR.lua"
 EXTRACT_ASSETS_PATH = "D:\\AutoBotProject\\MSBotUpdate\\assets"
 EXTRACT_ASSETS_MD5_PATH = "D:\\AutoBotProject\\MSBotUpdate\\assets\\assets.md5"
-EXTRACT_M_COLOR_PATH = "D:\\AutoBotProject\\MonsterStrikeBot\\脚本\\M_COLOR.lua"
 EMULATOR_ASSETS_PATH = "/sdcard/assets"
 EMULATOR_DEBUG_PATH = "D:\\User\\Kang\\Documents\\XuanZhi64\\Pictures\\assets"
 # =============================================================================
